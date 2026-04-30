@@ -15,6 +15,7 @@ dist/
 .output/
 .api/
 api/
+*test.py/
 
 # 모든 문서 파일 제외 (수집기 코드만 남김)
 *.md
