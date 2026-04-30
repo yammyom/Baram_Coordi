@@ -145,7 +145,7 @@ def crawl_tanning_items():
                 color_match = re.search(r'#([A-Fa-f0-9]{6})', li.get("style", ""))
                 if color_match: colors.append(f"#{color_match.group(1)}")
             
-            if name and not name.startswith("[대여]") and len(colors) == 8:
+            if name and len(colors) == 8:
                 tanning_rich_list.append({
                     "item_info": {"name": name, "part_id": 11, "gender": 2},
                     "detail": {"tanning_index": tanning_index, "colors": colors}
