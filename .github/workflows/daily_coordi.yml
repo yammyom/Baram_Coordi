@@ -2,7 +2,7 @@ name: Daily Coordi Scraper
 
 on:
   schedule:
-    - cron: '0 18 * * *' # 매일 한국시간 오전 3시 (UTC 18:00)
+    - cron: '0 6,18 * * *' # 매일 한국시간 오전/오후 3시 (UTC 18:00)
   workflow_dispatch: # 필요시 수동 실행 가능
 
 jobs:
