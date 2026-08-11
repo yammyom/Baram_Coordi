@@ -28,6 +28,3 @@ jobs:
           COORDI_SUPABASE_URL: ${{ secrets.COORDI_SUPABASE_URL }}
           COORDI_SUPABASE_ANON_KEY: ${{ secrets.COORDI_SUPABASE_ANON_KEY }}
         run: python fetch_coordi.py
-
-      - name: Keepalive Workflow
-        uses: gautamkrishnar/keepalive-workflow@v2
