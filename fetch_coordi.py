@@ -26,7 +26,7 @@ def load_env():
 load_env()
 
 SUPABASE_URL = os.getenv("COORDI_SUPABASE_URL")
-SUPABASE_ANON_KEY = os.getenv("COORDI_SUPABASE_ANON_KEY")
+SUPABASE_SERVICE_ROLE_KEY = os.getenv("COORDI_SUPABASE_SERVICE_ROLE_KEY")
 
 # 2. 인증 정보 추출
 def get_auth_info():
@@ -47,12 +47,12 @@ def get_auth_info():
 
 # 3. Supabase Upsert 헬퍼 (저장 후 결과 반환)
 def upsert_to_table(table_name, data, on_conflict="id"):
-    if not SUPABASE_URL or not SUPABASE_ANON_KEY: return []
+    if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY: return []
     
     endpoint = f"{SUPABASE_URL}/rest/v1/{table_name}"
     headers = {
-        "apikey": SUPABASE_ANON_KEY,
-        "Authorization": f"Bearer {SUPABASE_ANON_KEY}",
+        "apikey": SUPABASE_SERVICE_ROLE_KEY,
+        "Authorization": f"Bearer {SUPABASE_SERVICE_ROLE_KEY}",
         "Content-Type": "application/json",
         "Prefer": "return=representation,resolution=merge-duplicates"
     }
